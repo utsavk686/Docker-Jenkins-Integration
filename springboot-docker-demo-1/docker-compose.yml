@@ -6,6 +6,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: utsav
       MYSQL_DATABASE: product_db
+      MYSQL_USER: utsav
+      MYSQL_PASSWORD: utsav
     networks:
       - springboot-mysql-net
     healthcheck:
@@ -15,7 +17,7 @@ services:
 
   springboot-restful-webservices:
     build:
-      context: ./
+      context: ./ 
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
